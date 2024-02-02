@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Website</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header, footer {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% block head %}
+    <header>
+        <h1>My E-Commerce Website</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product Categories</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Welcome to our online store!</h2>
+                    <p>Explore our wide range of products and find great deals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+           
+                {% for product in products %}
+                <div class="col-md-4 mb-4">
+                    <!-- Your product card or display logic here -->
+                    <div class="card">
+                        {% for product_imagea in product.images  %}
+                                {% with product_imagea.image_url|json_script:"temp_image_url" as temp_image_url%}
+                                     <!-- {% for product_image in temp_image_url %} -->
+
+                                            <li>  {{temp_image_url}}</li>
+                                    <!-- {% endfor %} -->
+                                    {% endwith %}
+
+                       {% endfor %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>                        
+
+                            <p class="card-text">$ {{ product.price }}</p>
+                            <p class="card-text">{{ product.category }}</p>
+                            <p class="card-text">{{ product.sub_category }}</p>
+                            <!-- <p class="card-text">{{ product.description }}</p> -->
+                            <!-- Add more product details as needed -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+    
+     
+            </div>
+        </div>
+    </section>
+
+  
+
+    <footer>
+        &copy; 2024 My E-Commerce Website
+    </footer>
+{% endblock%}
+    <!-- Bootstrap JS and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
