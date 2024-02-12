@@ -1,4 +1,4 @@
-[{"model": "merchant.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$720000$J6d5HAOS2EWoltPjLhOZL1$yMhleqWY/wsXI3nkrvlV/048NGyU1WKZksGBV45lyBk=", "last_login": "2024-01-19T11:51:32Z", "is_superuser": true, "username": "sandeep", "first_name": "Sandeep", "last_name": "Bisht", "is_staff": true, "is_active": true, "date_joined": "2024-01-19T11:51:16Z", "name": "Sandeep", "email": "sandeep@kuants.in", "mobile": "1234567890", "groups": [], "user_permissions": []}}, 
+[{"model": "merchant.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$720000$J6d5HAOS2EWoltPjLhOZL1$yMhleqWY/wsXI3nkrvlV/048NGyU1WKZksGBV45lyBk=", "last_login": "2024-01-19T11:51:32Z", "is_superuser": true, "username": "sandeep", "first_name": "Sandeep", "last_name": "Bisht", "is_staff": true, "is_active": true, "date_joined": "2024-01-19T11:51:16Z", "name": "Sandeep", "email": "sandeep@gmail.in", "mobile": "1234567890", "groups": [], "user_permissions": []}}, 
 
 {"model": "merchant.address", "pk": 1, "fields": {"street": "near sandeep sweets,", "city": "Gurugram", "state": "Haryana", "zip_code": "122015", "user": 1}}, 
 
